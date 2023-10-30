@@ -1,13 +1,9 @@
 import React from 'react';
 import formcss from './contactform.module.css';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const ContactForm = ({ addContact }) => {
-  // state = {
-  //   name: '',
-  //   number: '',
-  // };
-
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
 
@@ -57,4 +53,8 @@ export const ContactForm = ({ addContact }) => {
       </button>
     </form>
   );
+};
+
+ContactForm.propTypes = {
+  addContact: PropTypes.func.isRequired,
 };
